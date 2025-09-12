@@ -1,29 +1,37 @@
 <template>
-  <div class="container">
-    <h1>Create New Blog Post</h1>
-    <form @submit.prevent="submitForm">
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" id="title" v-model="form.title" required />
-      </div>
-      <div class="form-group">
-        <label for="description">Description</label>
-        <textarea id="description" v-model="form.description" required></textarea>
-      </div>
-      <div class="form-group">
-        <label for="image">Upload Image</label>
-        <input type="file" id="image" @change="handleFileUpload" accept="image/*" required />
-      </div>
-      <div v-if="uploading" style="color: blue;">Uploading image...</div>
-      <div v-if="form.imageUrl" style="margin-top: 10px;">
-        <p>Image uploaded. Preview:</p>
-        <img :src="form.imageUrl" alt="Uploaded Image" style="max-width: 200px; max-height: 200px;" />
-      </div>
-      <div class="form-buttons">
-        <button type="submit" :disabled="uploading">Add Post</button>
-        <NuxtLink to="/">Cancel</NuxtLink>
-      </div>
-    </form>
+  <div class="form-page-container">
+    <div class="form-content-wrapper">
+      <h1>Create New Blog Post</h1>
+      <form @submit.prevent="submitForm">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" v-model="form.title" required />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" v-model="form.description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="image">Upload Image</label>
+          <input type="file" id="image" @change="handleFileUpload" accept="image/*" required />
+        </div>
+        <div v-if="uploading" style="color: blue;">Uploading image...</div>
+        <div v-if="form.imageUrl" style="margin-top: 10px;">
+          <p>Image uploaded. Preview:</p>
+          <img :src="form.imageUrl" alt="Uploaded Image" style="max-width: 200px; max-height: 200px;" />
+        </div>
+        
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" v-model="form.date" required />
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" :disabled="uploading">Add Post</button>
+          <NuxtLink to="/blog">Cancel</NuxtLink>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -38,7 +46,7 @@ const form = reactive({
   title: '',
   description: '',
   imageUrl: '',
-  date: new Date().toISOString().split('T')[0],
+  date: '',
 });
 
 const handleFileUpload = async (event) => {
@@ -79,7 +87,7 @@ const submitForm = async () => {
 
   if (data.value && data.value.success) {
     alert('Post added successfully!');
-    router.push('/');
+    router.push('/blog');
   } else {
     alert('Error adding post: ' + (error.value?.message || 'Unknown error'));
   }
