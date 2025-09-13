@@ -33,9 +33,11 @@ To run the application in development mode:
 
 ```bash
 npm run dev
-
+ 
 
 The application will be available at http://localhost:3000.
+
+```
 
 📂 Data Handling & Live Environment
 
