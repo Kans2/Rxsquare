@@ -39,39 +39,36 @@ The application will be available at http://localhost:3000.
 
 ```
 
-📂 Data Handling & Live Environment
+# 📝 Blog Application (Nuxt.js)
 
-This application uses a local JSON file (/content/blog.json) to store all blog post data. All actions (add, edit, delete) directly modify this file.
+## 📂 Data Handling & Live Environment
+This application uses a local JSON file (`/content/blog.json`) to store all blog post data.  
+All actions (add, edit, delete) directly modify this file.
 
-Important Note: This data handling method is suitable for a local demonstration. The JSON file will not work in a live deployment on a hosting service like Vercel or Netlify. This is because these platforms use a read-only file system, which prevents the application from writing new data or making changes to the file. For a live, persistent application, a database would be required.
+⚠️ **Important Note:**  
+This data handling method is suitable for **local demonstration only**.  
+In a live deployment (e.g., Vercel, Netlify), the JSON file will not work for saving changes because these platforms use a **read-only file system**.  
+For a live, persistent application, a **backend with a database** would be required.
 
-✨ Features
-This application includes the following features as per the task requirements:
+---
 
-List Blog Posts: View all posts on the main blog page (/blog).
+## ✨ Features
+- **List Blog Posts** → View all posts on the main blog page (`/blog`).
+- **Add New Post** → Create a new blog post with title, description, date, and image (stored locally).
+- **View Full Post** → Open a dedicated page to read the full blog.
+- **Edit Post** → Update an existing post’s details (title, description, image, date).
+- **Delete Post** → Permanently remove a post.
 
-Add New Post: Create a new blog post with a title, description, date, and image. The image is uploaded and stored on the local file system.
+---
 
-View Full Post: Click "View Full Blog" to see a dedicated page for a single post.
+## 🛠 Project Structure
+The project follows a standard **Nuxt.js directory structure**:
 
-Edit Post: Update an existing post's details, including the image and date.
+components/ # Vue components for UI elements
+pages/ # Application pages and routes
+server/ # API endpoints (for local JSON handling)
+assets/ # Global styles and assets
+content/ # Local blog.json file (data storage)
 
-Delete Post: Permanently remove a post.
-
-🛠 Project Structure
-The project follows a standard Nuxt.js directory structure:
-
-components/: Vue components for UI elements.
-
-pages/: Application pages and routes.
-
-server/: API endpoints.
-
-assets/: Global styles and assets.
-
-content/: The local blog.json file.
-
-
-##Author
-
-Kannan S
+## 👨‍💻 Author
+**Kannan S**
