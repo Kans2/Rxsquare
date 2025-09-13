@@ -1,8 +1,8 @@
 <template>
   <div>
-    <header style="background: #333; color: white; padding: 10px 20px;">
+    <header style="background: #333;  padding: 10px 20px;">
       <div class="container">
-        <h1 style="margin: 0;">My Nuxt Blog</h1>
+        <h1 style="margin: 0; color: white;">My Nuxt Blog</h1>
       </div>
     </header>
 

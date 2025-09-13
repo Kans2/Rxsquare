@@ -842,7 +842,7 @@ const _sfc_main$2 = {
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtPage = __nuxt_component_0;
-      _push(`<div${ssrRenderAttrs(_attrs)}><header style="${ssrRenderStyle({ "background": "#333", "color": "white", "padding": "10px 20px" })}"><div class="container"><h1 style="${ssrRenderStyle({ "margin": "0" })}">My Nuxt Blog</h1></div></header>`);
+      _push(`<div${ssrRenderAttrs(_attrs)}><header style="${ssrRenderStyle({ "background": "#333", "padding": "10px 20px" })}"><div class="container"><h1 style="${ssrRenderStyle({ "margin": "0", "color": "white" })}">My Nuxt Blog</h1></div></header>`);
       _push(ssrRenderComponent(_component_NuxtPage, null, null, _parent));
       _push(`</div>`);
     };
