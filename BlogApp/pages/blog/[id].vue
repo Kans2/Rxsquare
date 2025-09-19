@@ -30,7 +30,7 @@
 
         <div class="form-buttons">
           <button type="submit" :disabled="uploading">Update Post</button>
-          <NuxtLink to="/blog/view/{{postId}}">Cancel</NuxtLink>
+          <NuxtLink to="/blog">Cancel</NuxtLink>
         </div>
       </form>
     </div>

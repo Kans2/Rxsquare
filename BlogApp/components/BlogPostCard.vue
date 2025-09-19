@@ -14,7 +14,7 @@
 
     </div>
     <div class="actions">
-      <NuxtLink :to="`/blog/edit/${post.id}`" class="edit-btn">Edit</NuxtLink>
+      <NuxtLink :to="`/blog/${post.id}`" class="edit-btn">Edit</NuxtLink>
       <button @click.prevent="deletePost" class="delete-btn">Delete</button>
     </div>
   </div>
